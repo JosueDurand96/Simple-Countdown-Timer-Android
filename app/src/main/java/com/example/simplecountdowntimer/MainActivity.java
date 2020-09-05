@@ -7,13 +7,14 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button countdown_button;
     private TextView countdown_text;
     private CountDownTimer countDownTimer;
-    private long timeLeftInMillisenconds = 600000; // 10 mins
+    private long timeLeftInMillisenconds = 30000; // 600000 10 mins
     private boolean timerRunning;
 
     @Override
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private void startStop() {
         if (timerRunning) {
             stopTimer();
+
         } else {
             startTime();
         }
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                Toast.makeText(getApplicationContext(), "TERMINOOOOOOOOO", Toast.LENGTH_SHORT).show();
             }
         }.start();
          countdown_button.setText("PAUSE");
@@ -71,13 +74,6 @@ public class MainActivity extends AppCompatActivity {
         timeLeftText += ":";
         if (seconds <10 )timeLeftText += "0";
         timeLeftText += seconds;
-
         countdown_text.setText(timeLeftText);
-
-
-
-
     }
-
-
 }
