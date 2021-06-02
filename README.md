@@ -1,1 +1,4 @@
-# Simple-Countdown-Timer-Android
+# Countdown Timer Android
+
+
+![](timer.gif)
